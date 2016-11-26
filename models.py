@@ -80,8 +80,8 @@ class Comment(db.Model):
     __tablename__ = 'comments'
     # 下面是字段定义
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.Text)
-    author = db.Column(db.Text)
+    content = db.Column(db.String())
+    author = db.Column(db.String())
     created_time = db.Column(db.Integer, default=0)
     #
     blog_id = db.Column(db.Integer)
