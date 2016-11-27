@@ -7,13 +7,22 @@
 </head>
 <body>
     <form method="post" action="/msg/add">
-        <input class="form-control" type="text" name="content" placeholder="content">
-        <input class="form-control" type="text" name="username" placeholder="username">
+        <!--<input class="form-control" type="text" name="content" placeholder="content">-->
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess1">输入你的名留言:比如孙悟空到此一游</label>
+            <input type="text" class="form-control" id="inputSuccess1" name="content">
+        </div>
+        <!--<input class="form-control" type="text" name="username" placeholder="username">-->
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess1"> 输入你的名字</label>
+            <input type="text" class="form-control" id="inputSuccess2" name="username">
+        </div>
         <button type="submit" class="btn btn-info btn-lg">
             提交留言
         </button>
     </form>
     <!-- 所有留言的列表 -->
+    <p class="bg-primary">welcome, new world to learn</p>
     <div>
         {% for m in msgs %}
         <!--<div>-->
@@ -26,6 +35,6 @@
             <!--hello from gua1-->
         <!--</div>-->
     </div>
-<a href="/blogs">去我的 blog</a>>
+<a href="/blogs">去我的 blog</a>-->
 </body>
 </html>
