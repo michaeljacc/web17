@@ -51,6 +51,6 @@ def login():
         session['user_id'] = user.id
     else:
         print('FAILD')
-    return redirect(url_for('.login_view'))
+    return redirect("/blogs")
 
 
