@@ -7,8 +7,9 @@ from flask import url_for
 from flask import Blueprint
 
 from message import main as routes_msg
-from blog import main as routes_blog
 from user import main as routes_user
+from blog import main as routes_blog
+
 
 app = Flask(__name__)
 # 设置 secret_key 来使用 flask 自带的 session
@@ -36,4 +37,11 @@ if __name__ == '__main__':
         host='0.0.0.0',
         port=8000,
     )
+    if not app.debug:
+        import logging
+
+        stream_handler = logging.StreamHandler()
+        stream_handler.setLevel(logging.INFO)
+        app.logger.addHandler(stream_handler)
+
     app.run(**config)
