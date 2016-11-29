@@ -8,7 +8,7 @@ from flask import Blueprint
 
 from message import main as routes_msg
 from blog import main as routes_blog
-
+from user import main as routes_user
 
 app = Flask(__name__)
 # 设置 secret_key 来使用 flask 自带的 session
@@ -27,7 +27,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # 有一个 url_prefix 可以用来给蓝图中的每个路由加一个前缀
 app.register_blueprint(routes_msg)
 app.register_blueprint(routes_blog)
-
+app.register_blueprint(routes_user)
 # 运行代码
 # 默认端口是 5000
 if __name__ == '__main__':

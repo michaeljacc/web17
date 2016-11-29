@@ -13,7 +13,7 @@ Model = Message
 main = Blueprint('msg', __name__)
 
 
-@main.route('/')
+@main.route('/message')
 def index():
     # 查找所有的 msg 并返回
     msgs = Model.query.all()
