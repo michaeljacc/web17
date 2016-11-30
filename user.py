@@ -35,7 +35,6 @@ def register():
     u.avatar = avatar
     if u.valid():
         u.save()
-        print("注册成功")
     else:
         abort(410)
     return redirect(url_for('.login_view'))
