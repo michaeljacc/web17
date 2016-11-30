@@ -20,19 +20,19 @@ def index():
     return render_template('blog_list.html', blog_list=ms)
 
 
-@main.route('/blog/new')
+@main.route('/blogs/new')
 def new():
     return render_template('blog_new.html')
 
 
-@main.route('/blog/add', methods=['POST'])
+@main.route('/blogs/add', methods=['POST'])
 def add():
     form = request.form
     Blog.new(form)
     return redirect(url_for('.index'))
 
 
-@main.route('/blog/<int:blog_id>')
+@main.route('/blogs/<int:blog_id>')
 def detail(blog_id):
     b = Blog.query.get(blog_id)
     cs = Comment.query.filter_by(blog_id=b.id).all()
